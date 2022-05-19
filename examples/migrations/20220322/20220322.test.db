@@ -1,0 +1,17 @@
+---------------------
+-- Up
+---------------------
+
+CREATE TABLE IF NOT EXISTS friend (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  name TEXT
+);
+INSERT INTO friend (name) VALUES ('Jennifer');
+INSERT INTO friend (name) VALUES ('Courteney');
+INSERT INTO friend (name) VALUES ('Lisa');
+
+---------------------
+-- Down
+---------------------
+
+DROP TABLE friend;

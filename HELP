@@ -1,0 +1,64 @@
+NAME
+
+  ODB - CLI
+
+COMMANDS
+
+    help
+    create [TYPE]
+    migrate [TYPE]<up | down> [FILE_NAME]<*.db | *.yaml> | [DIRECTORY]
+    run [FILE_NAME]<*.db | *.yaml>
+    sql
+    token [TOKEN] (default ODB_TOKEN env variable (ex. export ODB_TOKEN=...))
+    config [FILE_NAME] (default .odbrc)
+    version
+
+FLAGS
+
+    -h help
+    -c create [TYPE]
+    -m migrate [TYPE]<up | down> [FILE_NAME]<*.db | *.yaml> | [DIRECTORY]
+    -r run [FILE_NAME]<*.db | *.yaml>
+    -s sql
+    -t token [TOKEN] (default ODB_TOKEN env variable "ex. export ODB_TOKEN=...")
+    -x config [FILE_NAME] (default .odbrc)
+    -v version
+
+USAGES
+
+    $ odb create blog
+    $ odb migrate up 20220318
+    $ odb migrate up 20220318.blog.db
+    $ odb migrate up 20220318.api-blog.yaml
+    $ odb run blog.db
+    $ odb run api-blog.yaml
+    $ odb sql
+
+VERSION
+
+  __PACKAGE__
+
+DESCRIPTION
+
+    CLI to upgrade or downgrade migrates of the databases schemas and the APIs definitions.
+    It is required the token, it could be set using the .odbrc (token=...) or the environment variable ODB_TOKEN or pass the token using the flag --token (-t).
+
+    We recommend using the date format yyyymmdd (20220318) as a prefix for the directories and files.
+    -- 20220318
+        |-- 20220318.blog.(db|sql)
+        |-- 20220318.api-blog.yaml
+
+    // 20220318.blog.db OR 20220318.api-blog.yaml
+    ---------------------
+    -- Up
+    ---------------------
+
+    The code to upgrade
+
+    ---------------------
+    -- Down
+    ---------------------
+
+    The code to downgrade
+
+    If there is an error during the <up> migrate, please execute a <down> migrate.

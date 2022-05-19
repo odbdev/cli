@@ -1,0 +1,20 @@
+---------------------
+-- Up
+---------------------
+
+api:
+  service: web-app
+  query: SELECT * FROM foobars LIMIT COALESCE(@limit, 10)
+  method: GET
+  path: /bar
+  headers: {
+    Access-Control-Allow-Origin: '*',
+    Access-Control-Allow-Methods: 'GET',
+    Cache-Control: 'max-age=3600'
+  }
+
+---------------------
+-- Down
+---------------------
+
+Here downgrade code 1

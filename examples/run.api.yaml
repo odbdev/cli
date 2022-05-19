@@ -1,0 +1,11 @@
+api:
+    service: web-app
+    method: GET
+    function: examples/run.api.function.js
+    path: /foo
+    headers:
+        {
+            Access-Control-Allow-Origin: '*',
+            Access-Control-Allow-Methods: 'GET',
+            Content-Type: 'application/json; charset=utf-8',
+        }

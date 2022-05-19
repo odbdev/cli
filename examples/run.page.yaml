@@ -1,0 +1,4 @@
+page:
+    project: web-app
+    function: examples/run.page.function.js
+    path: /friend

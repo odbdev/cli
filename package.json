@@ -1,0 +1,14 @@
+{
+    "name": "odb",
+    "description": "The ODB Command Line connects to your database from your terminal. You can create databases, run queries, send API schemas, and execute migrations.",
+    "version": "0.0.0",
+    "bin": {
+        "odb": "./bin/index.js"
+    },
+    "devDependencies": {
+        "prettier": "^2.6.0"
+    },
+    "dependencies": {
+        "js-yaml": "4.1.0"
+    }
+}
